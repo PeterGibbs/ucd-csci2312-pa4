@@ -16,6 +16,7 @@ namespace Gaming {
 
     public:
         Simple(const Game &g, const Position &p, double energy);
+
         ~Simple();
 
         PieceType getType() const override { return PieceType::SIMPLE; }

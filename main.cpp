@@ -42,7 +42,7 @@ int main() {
     // action tests
     test_action_smoketest(ec);
 
-    // game tests
+    // game tests*/
     test_game_smoketest(ec);
     test_game_populate(ec, NumIters);
     test_game_getpiece(ec, NumIters);

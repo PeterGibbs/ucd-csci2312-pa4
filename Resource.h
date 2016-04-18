@@ -14,14 +14,16 @@ namespace Gaming {
 
     protected:
         double __capacity;
-        
+
     public:
         static const double RESOURCE_SPOIL_FACTOR;
 
         Resource(const Game &g, const Position &p, double capacity);
+
         ~Resource();
 
         virtual double getCapacity() const { return __capacity; }
+
         virtual double consume();
 
         void age() override final;
@@ -32,7 +34,9 @@ namespace Gaming {
 
         // note: these won't be called while resources don't move
         Piece &operator*(Piece &other) override final;
+
         Piece &interact(Agent *) override final;
+
         Piece &interact(Resource *) override final; // note: no interaction between resources
     };
 

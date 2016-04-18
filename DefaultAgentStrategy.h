@@ -13,7 +13,9 @@ namespace Gaming {
     public:
 
         DefaultAgentStrategy();
+
         ~DefaultAgentStrategy();
+
         ActionType operator()(const Surroundings &s) const override;
     };
 

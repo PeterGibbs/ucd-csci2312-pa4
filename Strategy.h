@@ -11,8 +11,10 @@ namespace Gaming {
 
     class Strategy {
     public:
-        Strategy() {}
-        virtual ~Strategy() {};
+        Strategy() { }
+
+        virtual ~Strategy() { };
+
         virtual ActionType operator()(const Surroundings &s) const = 0;
     };
 

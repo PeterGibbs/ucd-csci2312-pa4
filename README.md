@@ -506,3 +506,13 @@ _This section concerns future revisions of this assignment._
 4. Explain forward class declarations used to avoid circular header includes.
 
 5. Remove inlines.
+
+6. Add instructions for printing the game, in particular:
+  1. The use of `std::stringstream` for dynamic stream formatting. See [this SO thread](http://stackoverflow.com/questions/1532640/which-iomanip-manipulators-are-sticky).
+  2. The use of `Piece::operator<<()` and `virtual Piece::print()`.
+
+7. Improve exception coverage.
+
+8. Write and generate Doxygen documentation.
+
+9. Elaborate on the turn taking and the methods (documentation).

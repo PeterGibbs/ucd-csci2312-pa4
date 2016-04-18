@@ -19,9 +19,11 @@ namespace Gaming {
         static const double AGENT_FATIGUE_RATE;
 
         Agent(const Game &g, const Position &p, double energy);
+
         ~Agent();
 
         double getEnergy() const { return __energy; }
+
         void addEnergy(double e) { __energy += e; }
 
         void age() override final;
@@ -29,7 +31,9 @@ namespace Gaming {
         bool isViable() const override final { return !isFinished() && __energy > 0.0; }
 
         Piece &operator*(Piece &other) override final;
+
         Piece &interact(Agent *) override final;
+
         Piece &interact(Resource *) override final;
 
     };

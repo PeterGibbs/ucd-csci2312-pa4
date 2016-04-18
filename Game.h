@@ -15,13 +15,18 @@
 namespace Gaming {
 
     class Piece;
+
     class Agent;
+
     class Strategy;
+
     class DefaultAgentStrategy;
 
     class Game {
     public:
-        enum Status { NOT_STARTED, PLAYING, OVER };
+        enum Status {
+            NOT_STARTED, PLAYING, OVER
+        };
 
     private:
         static const unsigned int NUM_INIT_AGENT_FACTOR;
@@ -48,34 +53,55 @@ namespace Gaming {
         static const double STARTING_RESOURCE_CAPACITY;
 
         Game();
+
         Game(unsigned width, unsigned height, bool manual = true); // note: manual population by default
-        Game(const Game &another);
-        Game &operator=(const Game &other) = delete;
+        Game(const Game &) = delete;
+
+        Game &operator=(const Game &) = delete;
+
         ~Game();
 
         // getters
         unsigned int getWidth() const { return __width; }
+
         unsigned int getHeight() const { return __height; }
+
         unsigned int getNumPieces() const;
+
         unsigned int getNumAgents() const;
+
         unsigned int getNumSimple() const;
+
         unsigned int getNumStrategic() const;
+
         unsigned int getNumResources() const;
+
         Status getStatus() const { return __status; }
+
         unsigned int getRound() const { return __round; }
+
         const Piece *getPiece(unsigned int x, unsigned int y) const;
 
         // grid population methods
         void addSimple(const Position &position);
+
         void addSimple(const Position &position, double energy); // used for testing only
         void addSimple(unsigned x, unsigned y);
+
         void addSimple(unsigned x, unsigned y, double energy);
+
         void addStrategic(const Position &position, Strategy *s = new DefaultAgentStrategy());
+
         void addStrategic(unsigned x, unsigned y, Strategy *s = new DefaultAgentStrategy());
+
         void addFood(const Position &position);
+
         void addFood(unsigned x, unsigned y);
+
         void addAdvantage(const Position &position);
+
         void addAdvantage(unsigned x, unsigned y);
+
         const Surroundings getSurroundings(const Position &pos) const;
 
         // gameplay methods
@@ -85,6 +111,7 @@ namespace Gaming {
         }
 
         bool isLegal(const ActionType &ac, const Position &pos) const;
+
         const Position move(const Position &pos, const ActionType &ac) const; // note: assumes legal, use with isLegal()
         void round();   // play a single round
         void play(bool verbose = false);    // play game until over

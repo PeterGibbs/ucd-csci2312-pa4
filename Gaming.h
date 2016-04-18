@@ -14,15 +14,21 @@ namespace Gaming {
     // matrix convention: x indexes rows from top to bottom, y column from left to right
     struct Position {
         unsigned int x, y;
-        Position() {}
-        Position(unsigned int x, unsigned int y) : x(x), y(y) {}
+
+        Position() { }
+
+        Position(unsigned int x, unsigned int y) : x(x), y(y) { }
     };
 
     // actions are either a motion in one of 8 directions or staying in place
-    enum ActionType { N=0, NE, NW, E, W, SE, SW, S, STAY };
+    enum ActionType {
+        N = 0, NE, NW, E, W, SE, SW, S, STAY
+    };
 
     // what a position on the game grid can be filled with
-    enum PieceType { SIMPLE=0, STRATEGIC, FOOD, ADVANTAGE, INACCESSIBLE, SELF, EMPTY };
+    enum PieceType {
+        SIMPLE = 0, STRATEGIC, FOOD, ADVANTAGE, INACCESSIBLE, SELF, EMPTY
+    };
 
     // a "map" of the 8 squares adjacent to a piece
     struct Surroundings {

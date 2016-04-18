@@ -17,6 +17,7 @@ namespace Gaming {
         static const double ADVANTAGE_MULT_FACTOR;
 
         Advantage(const Game &g, const Position &p, double capacity);
+
         ~Advantage();
 
         PieceType getType() const override { return PieceType::ADVANTAGE; }
@@ -24,6 +25,7 @@ namespace Gaming {
         void print(std::ostream &os) const override;
 
         double getCapacity() const override;
+
         double consume() override;
     };
 }
